@@ -6,9 +6,9 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.nnn228.utils.NavGraphBuilder;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -23,13 +23,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-
-        NavigationUI.setupWithNavController(navView, navController);
-
-        NavGraphBuilder.build(navController);
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        navController = NavHostFragment.findNavController(fragment);
         navView.setOnNavigationItemSelectedListener(this);
+
+       // NavigationUI.setupWithNavController(navView, navController);
+
+        NavGraphBuilder.build(navController, this, fragment.getId());
+
 
     }
 
