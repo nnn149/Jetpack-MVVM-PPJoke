@@ -1,0 +1,26 @@
+{
+  "main/tabs/dashboard": {
+    "isFragment": true,
+    "asStarter": false,
+    "needLogin": false,
+    "pageUrl": "main/tabs/dashboard",
+    "className": "com.example.nnn228.ui.dashboard.DashboardFragment",
+    "id": 1844343395
+  },
+  "main/tabs/home": {
+    "isFragment": true,
+    "asStarter": true,
+    "needLogin": false,
+    "pageUrl": "main/tabs/home",
+    "className": "com.example.nnn228.ui.home.HomeFragment",
+    "id": 355054921
+  },
+  "main/tabs/notification": {
+    "isFragment": true,
+    "asStarter": false,
+    "needLogin": false,
+    "pageUrl": "main/tabs/notification",
+    "className": "com.example.nnn228.ui.notifications.NotificationsFragment",
+    "id": 1836359691
+  }
+}
