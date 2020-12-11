@@ -1,4 +1,4 @@
-package com.example.nnn228.ui.home;
+package com.example.nnn228.ui.sofa;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,18 +15,18 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.libnavannotation.FragmentDestination;
 import com.example.nnn228.R;
 
-@FragmentDestination(pageUrl = "main/tabs/home", asStarter = false)
-public class HomeFragment extends Fragment {
+@FragmentDestination(pageUrl = "main/tabs/sofa", asStarter = true)
+public class SofaFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private SofaViewModel sofaViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        sofaViewModel =
+                new ViewModelProvider(this).get(SofaViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_sofa, container, false);
+        final TextView textView = root.findViewById(R.id.text_sofa);
+        sofaViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
