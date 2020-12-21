@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <data>
+
+        <variable
+            name="user"
+            type="User"></variable>
+
+        <import type="com.example.nnn228.data.bean.User"></import>
+    </data>
+
+    <TextView
+        android:id="@+id/author_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:gravity="center"
+        android:text="@{user.name}"
+        android:textColor="@color/color_333"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/create_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10"
+        android:textColor="@color/color_999"
+        android:textSize="@dimen/sp_12"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/feed_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_10"
+        android:src="@drawable/icon_item_cell_delete"
+        android:visibility="gone" />
+
+</LinearLayout>

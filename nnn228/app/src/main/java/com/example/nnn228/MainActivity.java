@@ -10,10 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.alibaba.fastjson.JSONObject;
-import com.example.libnetwork.ApiResponse;
-import com.example.libnetwork.GetRequest;
-import com.example.libnetwork.JsonCallback;
 import com.example.nnn228.utils.NavGraphBuilder;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -31,18 +27,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navController = NavHostFragment.findNavController(fragment);
         navView.setOnNavigationItemSelectedListener(this);
 
-       // NavigationUI.setupWithNavController(navView, navController);
+        // NavigationUI.setupWithNavController(navView, navController);
 
         NavGraphBuilder.build(navController, this, fragment.getId());
-        GetRequest<JSONObject> request = new GetRequest<>("www.mooc.com");
-        request.execute();
 
-        request.execute(new JsonCallback<JSONObject>() {
-            @Override
-            public void onSuccess(ApiResponse<JSONObject> response) {
-                super.onSuccess(response);
-            }
-        });
 
     }
 
@@ -51,4 +39,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navController.navigate(item.getItemId());
         return !TextUtils.isEmpty(item.getTitle());
     }
+
+
 }
